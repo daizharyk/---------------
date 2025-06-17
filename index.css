@@ -1,13 +1,13 @@
 @font-face {
-  font-family: "Diploma";
-  src: url("fonts/Diploma.woff2") format("woff2");
+  font-family: "SecondLesson";
+  src: url("fonts/SecondLesson.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "SecondLesson";
-  src: url("fonts/SecondLesson.woff") format("woff2");
+  font-family: "miama";
+  src: url("fonts/miama.otf") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,16 +20,10 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Miss_Katherine-Script";
-  src: url("fonts/Miss_Katherine-Script.woff") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 .container {
   width: 100%;
-  height: 100vh;
+
   background-color: #203732;
 }
 * {
@@ -44,6 +38,14 @@
   opacity: 0.7;
   left: -100px;
   transform: rotate(90deg);
+}
+.img_sec {
+  position: absolute;
+  width: 40%;
+  bottom: 150px;
+  opacity: 0.7;
+  right: -30px;
+  transform: rotate(-80deg);
 }
 .main_wrapper {
   position: relative;
@@ -89,25 +91,17 @@
   text-align: center; /* чтобы текст был по центру */
 }
 
-.video-background {
+.second_wrapper {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+  height: auto;
 }
 
-.video-background video {
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  left: -65px;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  color: white;
+.invit_text {
+  font-family: "miama", sans-serif;
+  color: #e0d396;
+  padding: 0 10px;
+  font-size: 15px;
+  letter-spacing: 2px;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
+  line-height: 2;
 }
