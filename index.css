@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "SecondLesson";
-  src: url("fonts/SecondLesson.woff") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "miama";
   src: url("fonts/miama.otf") format("woff2");
   font-weight: normal;
@@ -20,6 +13,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Sverdlovsk";
+  src: url("fonts/Sverdlovsk.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 .container {
   width: 100%;
@@ -30,6 +30,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #e0d396;
 }
 .img_first {
   position: absolute;
@@ -94,14 +95,34 @@
 .second_wrapper {
   width: 100%;
   height: auto;
+  position: relative;
 }
 
+.flower_3 {
+  position: absolute;
+  top: -150px;
+  left: -30px;
+  width: 50%;
+  transform: rotate(-72deg);
+}
 .invit_text {
   font-family: "miama", sans-serif;
   color: #e0d396;
-  padding: 0 10px;
-  font-size: 15px;
+  padding: 50px 10px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
   line-height: 2;
+}
+
+.data_text {
+  font-family: "Sverdlovsk", sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+.data {
+  font-family: "Sverdlovsk", sans-serif;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 60px;
 }
