@@ -15,7 +15,23 @@
 }
 @font-face {
   font-family: "Sverdlovsk";
-  src: url("fonts/Sverdlovsk.woff") format("woff2");
+  src: url("fonts/Sverdlovsk.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GoudyTrajan";
+  src: url("fonts/GoudyTrajan-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NarzissProCyrillic";
+  src: url("fonts/NarzissProCyrillic.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -23,11 +39,12 @@
 
 .container {
   width: 100%;
-
+  overflow-x: hidden;
   background-color: #203732;
 }
 * {
   padding: 0;
+
   margin: 0;
   box-sizing: border-box;
   color: #e0d396;
@@ -113,8 +130,15 @@
   letter-spacing: 2px;
   text-align: center;
   line-height: 2;
+  margin-bottom: 50px;
 }
-
+.rose {
+  position: absolute;
+  right: -70px;
+  top: 230px;
+  width: 60%;
+  transform: rotate(-45deg);
+}
 .data_text {
   font-family: "Sverdlovsk", sans-serif;
   font-size: 40px;
@@ -125,4 +149,73 @@
   padding: 20px 0;
   text-align: center;
   font-size: 60px;
+}
+
+.addres_wrapper {
+  text-align: center;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  text-transform: uppercase;
+}
+.address_title {
+  font-family: "Sverdlovsk", sans-serif;
+  font-size: 40px;
+
+  padding-bottom: 20px;
+}
+
+.address {
+    font-family: "NarzissProCyrillic", sans-serif;
+  font-size: 20px;
+}
+.address_rest {
+    font-family: "NarzissProCyrillic", sans-serif;
+  font-size: 35px;
+}
+
+.map {
+  width: 80px;
+  margin: 0 auto;
+  padding: 20px 0;
+  transition: 0.2s scale;
+}
+.map:hover {
+  scale: 1.1;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.time-block {
+  display: flex;
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #e0d396;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* добавь для центрирования */
+  font-family: "NarzissProCyrillic", sans-serif;
+  font-size: 20px;
+  position: relative;
+}
+
+.time-block img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  right: -12px;
+  bottom: -8px;
+}
+
+.time-block small {
+  font-size: 10px;
+  margin-top: 5px;
 }
