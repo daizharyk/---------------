@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const startMusic = () => {
     music.play();
     isPlaying = true;
-    button.textContent = "⏸";
+    button.textContent = "||";
   };
 
   button.addEventListener("click", () => {
