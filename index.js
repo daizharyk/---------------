@@ -4,9 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".parallax").forEach((el) => {
       const speed = parseFloat(el.dataset.speed) || 0.3;
-      el.style.transform = `translateY(${scrollY * speed}px) rotate(${
-        el.classList.contains("img_first") ? 90 : -80
-      }deg)`;
+
+      // Устанавливаем индивидуальный угол поворота по классу
+      let rotateDeg = 0;
+      if (el.classList.contains("img_first")) {
+        rotateDeg = 90;
+      } else if (el.classList.contains("img_sec")) {
+        rotateDeg = -80;
+      } else if (el.classList.contains("image_flower")) {
+        rotateDeg = -10;
+      } else if (el.classList.contains("rose")) {
+        rotateDeg = -45;
+      } else if (el.classList.contains("flower_3")) {
+        rotateDeg = -90;
+      } else if (el.classList.contains("owner_img")) {
+        rotateDeg = -150;
+      }
+
+      el.style.transform = `translateY(${
+        scrollY * speed
+      }px) rotate(${rotateDeg}deg)`;
     });
   });
 
@@ -63,4 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   document.addEventListener("click", initPlayOnce);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  const elements = document.querySelectorAll(".timer_wrapper, .countdown");
+
+  elements.forEach((el) => {
+    observer.observe(el);
+  });
 });
