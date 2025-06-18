@@ -22,16 +22,23 @@
 }
 
 @font-face {
-  font-family: "GoudyTrajan";
-  src: url("fonts/GoudyTrajan-Regular.otf") format("opentype");
+  font-family: "NarzissProCyrillic";
+  src: url("fonts/NarzissProCyrillic.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "NarzissProCyrillic";
-  src: url("fonts/NarzissProCyrillic.ttf") format("opentype");
+  font-family: "KZCarolina";
+  src: url("fonts/KZCarolina-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Amour";
+  src: url("fonts/KZ_Mon_Amour_One.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -167,16 +174,17 @@
 }
 
 .address {
-    font-family: "NarzissProCyrillic", sans-serif;
+  font-family: "NarzissProCyrillic", sans-serif;
   font-size: 20px;
 }
 .address_rest {
-    font-family: "NarzissProCyrillic", sans-serif;
+  font-family: "NarzissProCyrillic", sans-serif;
   font-size: 35px;
 }
 
 .map {
-  width: 80px;
+  width: 60px;
+  opacity: 0.8;
   margin: 0 auto;
   padding: 20px 0;
   transition: 0.2s scale;
@@ -194,7 +202,7 @@
 
 .time-block {
   display: flex;
-  width: 70px; 
+  width: 70px;
   height: 70px;
   border-radius: 50%;
   border: 1px solid #e0d396;
@@ -218,4 +226,53 @@
 .time-block small {
   font-size: 10px;
   margin-top: 5px;
+}
+
+.time {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 28px;
+  color: #e0d396;
+}
+
+.time div {
+  display: flex;
+  flex-direction: column; /* изменено: теперь колонка */
+font-size: 35px;
+  font-family: "KZCarolina", sans-serif;
+  gap: 5px;
+}
+
+.time span {
+  font-size: 20px;
+  font-family: "Amour", sans-serif;
+}
+
+.timer_wrapper {
+  position: relative;
+}
+.line {
+  position: absolute;
+  top: -90px;
+}
+.line path {
+  fill: #a91f23 !important;
+}
+
+.invite_time {
+  text-align: center;
+  margin-right: 70px;
+}
+
+.open {
+  align-items: end;
+  margin: 20px 90px 0 0;
+}
+.ready {
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 30px;
 }
