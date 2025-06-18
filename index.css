@@ -51,6 +51,11 @@
   font-display: swap;
 }
 
+.parallax {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
 .music-wrapper {
   display: flex;
   flex-direction: column;
@@ -97,6 +102,8 @@
   opacity: 0.7;
   left: -100px;
   transform: rotate(90deg);
+  will-change: transform;
+  transition: transform 0.1s linear;
 }
 .img_sec {
   position: absolute;
@@ -105,6 +112,8 @@
   opacity: 0.7;
   right: -30px;
   transform: rotate(-80deg);
+  will-change: transform;
+  transition: transform 0.1s linear;
 }
 .main_wrapper {
   position: relative;
@@ -199,6 +208,13 @@
   flex-direction: column;
   row-gap: 15px;
   text-transform: uppercase;
+  position: relative;
+}
+.addref_img {
+  position: absolute;
+  width: 60%;
+  right: 0;
+  top: -30px;
 }
 .address_title {
   font-family: "Sverdlovsk", sans-serif;
@@ -268,7 +284,7 @@
   flex-direction: column;
   padding-left: 100px;
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 70px;
   font-size: 28px;
   color: #e0d396;
 }
@@ -291,12 +307,12 @@
   height: 600px;
 }
 
-.image_flower{
-    position: absolute;
-    bottom: -20px;
-    left: -20px;
-    transform: rotate(-10deg);
-    width: 30%;
+.image_flower {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  transform: rotate(-10deg);
+  width: 30%;
 }
 .merry {
   position: absolute;
@@ -322,7 +338,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-
+  position: relative;
   margin-bottom: 100px;
 }
 .owners_title {
@@ -332,4 +348,11 @@
 .owners {
   font-family: "Amour", sans-serif;
   font-size: 40px;
+}
+.owner_img {
+  position: absolute;
+  width: 30%;
+  transform: rotate(-120deg);
+  right: -10px;
+  top: -50px;
 }

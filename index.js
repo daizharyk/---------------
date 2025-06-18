@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Счётчик
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    document.querySelectorAll(".parallax").forEach((el) => {
+      const speed = parseFloat(el.dataset.speed) || 0.3;
+      el.style.transform = `translateY(${scrollY * speed}px) rotate(${
+        el.classList.contains("img_first") ? 90 : -80
+      }deg)`;
+    });
+  });
+
   function updateCountdown() {
     const now = new Date();
     const targetDate = new Date("2025-08-16T00:00:00");
