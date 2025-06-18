@@ -24,11 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  // Музыка
   const music = document.getElementById("bgMusic");
   const button = document.getElementById("musicToggle");
+  const label = document.querySelector(".music-label");
 
-  let isPlaying = true;
+  let isPlaying = false;
+
+  const startMusic = () => {
+    music.play();
+    isPlaying = true;
+    button.textContent = "⏸";
+  };
 
   button.addEventListener("click", () => {
     if (isPlaying) {
@@ -40,4 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     isPlaying = !isPlaying;
   });
+
+  const initPlayOnce = () => {
+    startMusic();
+    document.removeEventListener("click", initPlayOnce);
+  };
+
+  document.addEventListener("click", initPlayOnce);
 });
