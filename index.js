@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
   button.addEventListener("click", () => {
     if (isPlaying) {
       music.pause();
-      button.textContent = "▶";
+      button.textContent = "▶︎";
     } else {
       music.play();
-      button.textContent = "⏸";
+      button.textContent = "||";
     }
     isPlaying = !isPlaying;
   });
