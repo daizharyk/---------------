@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("onceVideo");
   const content = document.querySelector(".site-content");
 
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const img = document.querySelector(".img_sec");
+      img.classList.add("visible");
+    }, 2000); 
+  });
+
+
   Promise.all([
     new Promise((resolve) => video.addEventListener("ended", resolve)),
     new Promise((resolve) => window.addEventListener("load", resolve)),
