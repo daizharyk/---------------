@@ -200,6 +200,7 @@ body {
   width: 100%;
   bottom: 100px;
   color: #e0d396;
+  z-index: 2;
   left: 50%;
   font-size: 90px;
   transform: translateX(-50%); /* только по X */
