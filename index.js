@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("onceVideo");
+  const content = document.querySelector(".site-content");
+
+  Promise.all([
+    new Promise((resolve) => video.addEventListener("ended", resolve)),
+    new Promise((resolve) => window.addEventListener("load", resolve)),
+  ]).then(() => {
+    content.classList.add("visible");
+  });
+
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
 
@@ -8,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Устанавливаем индивидуальный угол поворота по классу
       let rotateDeg = 0;
       if (el.classList.contains("img_first")) {
-        rotateDeg = 90;
+        rotateDeg = 120;
       } else if (el.classList.contains("img_sec")) {
         rotateDeg = -80;
       } else if (el.classList.contains("image_flower")) {
