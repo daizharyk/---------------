@@ -58,7 +58,11 @@
   transition: transform 0.1s ease-out;
   will-change: transform;
 }
-
+.wedding_to {
+  font-family: "Miss_Katherine-Script", sans-serif;
+  font-size: 90px;
+  text-align: center;
+}
 .music-wrapper {
   display: flex;
   flex-direction: column;
@@ -303,7 +307,6 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 1s ease, transform 1s ease;
-  margin-top: 50px;
 }
 .countdown.visible {
   opacity: 1;
