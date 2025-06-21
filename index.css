@@ -83,6 +83,7 @@
   pointer-events: auto;
 }
 body {
+  overflow: hidden;
   background-color: #203732;
 }
 .intro-video {

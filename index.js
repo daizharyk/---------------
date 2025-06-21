@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     new Promise((resolve) => window.addEventListener("load", resolve)),
   ]).then(() => {
     content.classList.add("visible");
+    document.body.style.overflow = "auto";
   });
 
   window.addEventListener("scroll", () => {
