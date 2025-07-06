@@ -224,6 +224,7 @@ body {
   top: -190px;
   left: -20px;
   width: 40%;
+  z-index: 2;
   transform: rotate(-90deg);
 }
 .invit_text {

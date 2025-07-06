@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const music = document.getElementById("bgMusic");
   const button = document.getElementById("musicToggle");
-  const label = document.querySelector(".music-label");
 
   let isPlaying = false;
 
