@@ -1,25 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let cssLoaded = false;
-  for (const sheet of document.styleSheets) {
-    try {
-      if (sheet.cssRules && sheet.cssRules.length > 0) {
-        cssLoaded = true;
-        break;
-      }
-    } catch (e) {
-      // Чужой домен или кросс-домен — пропускаем
-    }
-  }
-
-  if (!cssLoaded) {
-    // Принудительно перезагружаем CSS
-    const links = document.querySelectorAll('link[rel="stylesheet"]');
-    links.forEach((link) => {
-      const href = link.getAttribute("href").split("?")[0];
-      link.setAttribute("href", href + "?t=" + Date.now());
-    });
-  }
-
+ 
+ 
+ 
   const video = document.getElementById("onceVideo");
   const content = document.querySelector(".site-content");
 
@@ -27,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       const img = document.querySelector(".img_sec");
       img.classList.add("visible");
-    }, 2000);
+    }, 2000); 
   });
+
 
   Promise.all([
     new Promise((resolve) => video.addEventListener("ended", resolve)),
@@ -92,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const music = document.getElementById("bgMusic");
   const button = document.getElementById("musicToggle");
+  const label = document.querySelector(".music-label");
 
   let isPlaying = false;
 
