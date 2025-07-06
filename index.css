@@ -171,7 +171,8 @@ body {
 }
 .img_sec.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotate(-80deg);
+ 
 }
 .main_wrapper {
   position: relative;
