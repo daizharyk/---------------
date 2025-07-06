@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  });
+
   const video = document.getElementById("onceVideo");
   const content = document.querySelector(".site-content");
 
@@ -12,16 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Показываем контент после окончания видео
-  if (video && content) {
-    Promise.all([
-      new Promise((resolve) => video.addEventListener("ended", resolve)),
-      new Promise((resolve) => window.addEventListener("load", resolve)),
-    ]).then(() => {
-      content.classList.add("visible");
-      document.body.style.overflow = "auto";
-    });
-  }
+  Promise.all([
+    new Promise((resolve) => video.addEventListener("ended", resolve)),
+    new Promise((resolve) => window.addEventListener("load", resolve)),
+  ]).then(() => {
+    content.classList.add("visible");
+    document.body.style.overflow = "auto";
+  });
 
   // Parallax эффект при скролле
   window.addEventListener("scroll", () => {
