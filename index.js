@@ -18,13 +18,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  Promise.all([
-    new Promise((resolve) => video.addEventListener("ended", resolve)),
-    new Promise((resolve) => window.addEventListener("load", resolve)),
-  ]).then(() => {
+  let videoEnded = false;
+  let pageLoaded = false;
+
+  const showContent = () => {
     content.classList.add("visible");
     document.body.style.overflow = "auto";
+  };
+
+  const checkVisibility = () => {
+    // Показываем контент, если:
+    // - видео закончилось
+    // - пользователь уже скроллил вниз (видео не в зоне видимости)
+    // - видео отсутствует
+    if ((videoEnded || window.scrollY > 100 || !video) && pageLoaded) {
+      showContent();
+    }
+  };
+
+  if (video) {
+    // Если видео завершилось нормально
+    video.addEventListener("ended", () => {
+      videoEnded = true;
+      checkVisibility();
+    });
+
+    // Если видео не воспроизвелось — ждем 7 секунд и все равно показываем контент
+    setTimeout(() => {
+      if (!videoEnded) {
+        videoEnded = true;
+        checkVisibility();
+      }
+    }, 3000);
+  } else {
+    videoEnded = true;
+  }
+
+  window.addEventListener("load", () => {
+    pageLoaded = true;
+    checkVisibility();
   });
+
 
   // Parallax эффект при скролле
   window.addEventListener("scroll", () => {
